@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function BlogCard({id, title, description, creationDate, imageSrc }) {
   // const {Posts,setPosts} = useContext(MyContext);
   const [expanded, setExpanded] = useState(false);
-  const [imagePath, setImagePath] = useState(
+  const [imagePath, setImagePath] = useState( 
     "https://www.patterns.dev/img/reactjs/react-logo@3x.svg"
   ); // Default or fallback image path
 
