@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 
 
 const User = require('./models/UserModal');
-const adminroutes = require("./routes/adminroutes");
+const adminroutes = require("./routes/Adminroutes");
 const blogroutes = require('./routes/Blogroutes')
 const loginsignup = require('./routes/SignupLoginroutes');
 
