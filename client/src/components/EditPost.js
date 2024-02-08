@@ -8,7 +8,7 @@ function EditPost() {
 
   useEffect(() => {
     // Fetch categories whenever the component mounts
-    fetch("http://localhost:4000/dashboard/categories")
+    fetch("https://cms-42rf.onrender.com/dashboard/categories")
       .then((response) => response.json())
       .then((data) => {
         SetCategoryValues(data);
@@ -58,7 +58,7 @@ function EditPost() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const url = `http://localhost:4000/dashboard/posts/edit/${id}`;
+    const url = `https://cms-42rf.onrender.com/dashboard/posts/edit/${id}`;
 
     const data = {
       title: formData.title,

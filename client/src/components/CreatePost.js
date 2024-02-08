@@ -1,14 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { MyContext } from './MyContext';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function CreatePost() {
   const { CategoryValues, SetCategoryValues } = useContext(MyContext);
   const [Users, SetUsers] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
+  const {navigate} = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:4000/dashboard/categories')
+    fetch('https://cms-42rf.onrender.com/dashboard/categories')
       .then((response) => response.json())
       .then((data) => {
         SetCategoryValues(data);
@@ -17,7 +19,7 @@ function CreatePost() {
         console.error('Error fetching categories:', error);
       });
 
-    fetch('http://localhost:4000/users')
+    fetch('https://cms-42rf.onrender.com/users')
       .then((response) => response.json())
       .then((data) => {
         SetUsers(data);
@@ -75,7 +77,7 @@ function CreatePost() {
       return;
     }
 
-    const url = 'http://localhost:4000/dashboard/posts';
+    const url = 'https://cms-42rf.onrender.com/dashboard/posts';
 
     const data = {
       title: formData.title,
@@ -107,6 +109,7 @@ function CreatePost() {
       })
       .then((data) => {
         console.log(data);
+        navigate('/dashboard')
         notify();
       })
       .catch((error) => {

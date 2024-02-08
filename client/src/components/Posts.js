@@ -17,7 +17,7 @@ function Posts({ post }) {
   };
 
   const handleDelete = (postId) => {
-    fetch(`http://localhost:4000/dashboard/posts/delete/${postId}`, {
+    fetch(`https://cms-42rf.onrender.com/dashboard/posts/delete/${postId}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -50,7 +50,7 @@ function Posts({ post }) {
   
   useEffect(() => {
     // Fetch posts whenever the posts button clicks
-    fetch("http://localhost:4000/dashboard/posts")
+    fetch("https://cms-42rf.onrender.com/dashboard/posts")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);

@@ -7,7 +7,7 @@ const { Posts, setPosts } = useContext(MyContext);
   const [userPosts, setUserPosts] = useState([]);
   useEffect(() => {
     // Fetch posts whenever the posts button clicks
-    fetch("http://localhost:4000/dashboard/posts")
+    fetch("https://cms-42rf.onrender.com/dashboard/posts")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);

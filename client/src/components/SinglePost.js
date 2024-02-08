@@ -21,7 +21,7 @@ function SinglePost() {
   const navigate = useNavigate();
   const isUserLoggedIn = !!userEmail;
   useEffect(() => {
-    fetch("http://localhost:4000/dashboard/posts")
+    fetch("https://cms-42rf.onrender.com/dashboard/posts")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
@@ -42,7 +42,7 @@ function SinglePost() {
   useEffect(() => {
     if (post.file) {
       const correctedImagePath = post.file.replace(/\\/g, "/");
-      setImagePath("http://localhost:4000/" + correctedImagePath);
+      setImagePath("https://cms-42rf.onrender.com/" + correctedImagePath);
     }
   }, [post.file]);
 
@@ -61,7 +61,7 @@ function SinglePost() {
     : "Loading...";
 
   useEffect(() => {
-    fetch("http://localhost:4000/users")
+    fetch("https://cms-42rf.onrender.com/users")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -82,7 +82,7 @@ function SinglePost() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:4000/blogs/post/${postId}/comments`, {
+    fetch(`https://cms-42rf.onrender.com/blogs/post/${postId}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,7 +104,7 @@ function SinglePost() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:4000/blogs/post/${postId}/comments`)
+    fetch(`https://cms-42rf.onrender.com/blogs/post/${postId}/comments`)
       .then((response) => response.json())
       .then((data) => {
         setComments(data);

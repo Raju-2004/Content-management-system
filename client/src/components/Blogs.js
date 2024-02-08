@@ -14,7 +14,7 @@ function Blogs() {
   const [inputText,setInputText] = useState("")
   console.log(inputText);
   useEffect(() => {
-    fetch("http://localhost:4000/dashboard/posts")
+    fetch("https://cms-42rf.onrender.com/dashboard/posts")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
@@ -24,9 +24,10 @@ function Blogs() {
       .catch((error) => {
         console.error("Error fetching posts:", error);
       });
-      fetch('http://localhost:4000/dashboard/categories')
+      fetch("https://cms-42rf.onrender.com/dashboard/categories")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         SetCategoryValues(data);
       })
       .catch((error) => {

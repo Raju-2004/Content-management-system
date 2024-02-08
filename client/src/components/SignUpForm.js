@@ -46,7 +46,7 @@ function SignUpForm({ isOpen, close, onSignUpSuccess }) {
       // Handle login form submission
       console.log("Logging in...");
 
-      const url = "http://localhost:4000/login"; 
+      const url = "https://cms-42rf.onrender.com/login"; 
       const data = {
         Email: email,
         Password: password,
@@ -96,7 +96,7 @@ function SignUpForm({ isOpen, close, onSignUpSuccess }) {
       console.log("Email:", email);
       console.log("Password:", password);
 
-      const url = "http://localhost:4000/signup";
+      const url = "https://cms-42rf.onrender.com/signup";
 
       const data = {
         fname: firstName,

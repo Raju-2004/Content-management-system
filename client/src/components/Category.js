@@ -44,9 +44,9 @@ function Category() {
   const handlePost = () => {
     const data = { title: formData.title };
     let method = "POST"; // Default to POST
-    let url = "http://localhost:4000/dashboard/categories"
+    let url = "https://cms-42rf.onrender.com/dashboard/categories"
     if (button === "Edit Category") {
-      url = `http://localhost:4000/dashboard/categories/edit/${currentId}`
+      url = `https://cms-42rf.onrender.com/dashboard/categories/edit/${currentId}`
       method = "PUT"; // Change to PUT if button text is 'Edit Category'
     }
 
@@ -76,7 +76,7 @@ function Category() {
   const handleDelete = (categoryId) => {
     // Send a DELETE request to your backend to delete the category
     console.log(categoryId)
-    fetch(`http://localhost:4000/dashboard/categories/delete/${categoryId}`, {
+    fetch(`https://cms-42rf.onrender.com/dashboard/categories/delete/${categoryId}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -107,7 +107,7 @@ function Category() {
   
   useEffect(() => {
     // Fetch posts whenever count changes
-    fetch("http://localhost:4000/dashboard/categories")
+    fetch("https://cms-42rf.onrender.com/dashboard/categories")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data)
